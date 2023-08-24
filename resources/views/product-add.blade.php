@@ -14,6 +14,8 @@
     <title>Product add</title>
 </head>
 
+
+
 <body>
     <div class="container mt-3" style="margin-top:20px">
         <h2>Add new product</h2>
