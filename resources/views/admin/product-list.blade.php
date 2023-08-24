@@ -4,170 +4,181 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Admin Dashboard </title>
+    <title>Purple Admin</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="../admin/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../admin/assets/vendors/iconfonts/ionicons/dist/css/ionicons.css">
-    <link rel="stylesheet" href="../admin/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../admin/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../admin/assets/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../admin/assets/vendors/css/vendor.bundle.addons.css">
+    
     <!-- endinject -->
-    <!-- plugin css for this page -->
+    <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="../admin/assets/css/shared/style.css">
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="../admin/assets/css/demo_1/style.css">
-    <!-- End Layout styles -->
+    <link rel="stylesheet" href="../admin/assets/css/style.css">
+    <!-- End layout styles -->
     <link rel="shortcut icon" href="../admin/assets/images/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
     <div class="container-scroller">
-      <!-- partial:partials/_navbar.html -->
-      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-          <a class="navbar-brand brand-logo" href="index.html">
-            <img src="../admin/assets/images/logo.svg" alt="logo" /> </a>
-          <a class="navbar-brand brand-logo-mini" href="index.html">
-            <img src="../admin/assets/images/logo-mini.svg" alt="logo" /> </a>
+      <div class="row p-0 m-0 proBanner" id="proBanner">
+        <div class="col-md-12 p-0 m-0">
+          <div class="card-body card-body-padding d-flex align-items-center justify-content-between">
+            <div class="ps-lg-1">
+              <div class="d-flex align-items-center justify-content-between">
+                <p class="mb-0 font-weight-medium me-3 buy-now-text">Free 24/7 customer support, updates, and more with this template!</p>
+                <a href="https://www.bootstrapdash.com/product/purple-bootstrap-admin-template/?utm_source=organic&utm_medium=banner&utm_campaign=buynow_demo" target="_blank" class="btn me-2 buy-now-btn border-0">Get Pro</a>
+              </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-between">
+              <a href="https://www.bootstrapdash.com/product/purple-bootstrap-admin-template/"><i class="mdi mdi-home me-3 text-white"></i></a>
+              <button id="bannerClose" class="btn border-0 p-0">
+                <i class="mdi mdi-close text-white me-0"></i>
+              </button>
+            </div>
+          </div>
         </div>
-        <div class="navbar-menu-wrapper d-flex align-items-center">
-          <ul class="navbar-nav">
-            <li class="nav-item font-weight-semibold d-none d-lg-block">Help : +050 2992 709</li>
-            <li class="nav-item dropdown language-dropdown">
-              <a class="nav-link dropdown-toggle px-2 d-flex align-items-center" id="LanguageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <div class="d-inline-flex mr-0 mr-md-3">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-us"></i>
-                  </div>
+      </div>
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+          <a class="navbar-brand brand-logo" href="index.html"><img src="../admin/assets/images/logo.svg" alt="logo" /></a>
+          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../admin/assets/images/logo-mini.svg" alt="logo" /></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-menu"></span>
+          </button>
+          <div class="search-field d-none d-md-block">
+            <form class="d-flex align-items-center h-100" action="#">
+              <div class="input-group">
+                <div class="input-group-prepend bg-transparent">
+                  <i class="input-group-text border-0 mdi mdi-magnify"></i>
                 </div>
-                <span class="profile-text font-weight-medium d-none d-md-block">English</span>
+                <input type="text" class="form-control bg-transparent border-0" placeholder="Search projects">
+              </div>
+            </form>
+          </div>
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-profile dropdown">
+              <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="nav-profile-img">
+                  <img src="../pro_img/{{Session::get('adminPhoto')}}" alt="image">
+                  <span class="availability-status online"></span>
+                </div>
+                <div class="nav-profile-text">
+                  <p class="mb-1 text-black">{{Session::get('adminID')}}</p>
+                </div>
               </a>
-              <div class="dropdown-menu dropdown-menu-left navbar-dropdown py-2" aria-labelledby="LanguageDropdown">
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-us"></i>
-                  </div>English
-                </a>
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-fr"></i>
-                  </div>French
-                </a>
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-ae"></i>
-                  </div>Arabic
-                </a>
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-ru"></i>
-                  </div>Russian
-                </a>
+              <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                <a class="dropdown-item" href="{{route('admin-logout')}}">
+                  <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
               </div>
             </li>
-          </ul>
-          <form class="ml-auto search-form d-none d-md-block" action="#">
-            <div class="form-group">
-              <input type="search" class="form-control" placeholder="Search Here">
-            </div>
-          </form>
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-              <a class="nav-link count-indicator" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <i class="mdi mdi-bell-outline"></i>
-                <span class="count">7</span>
+            <li class="nav-item d-none d-lg-block full-screen-link">
+              <a class="nav-link">
+                <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
               </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
-                <a class="dropdown-item py-3">
-                  <p class="mb-0 font-weight-medium float-left">You have 7 unread mails </p>
-                  <span class="badge badge-pill badge-primary float-right">View all</span>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="mdi mdi-email-outline"></i>
+                <span class="count-symbol bg-warning"></span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+                <h6 class="p-3 mb-0">Messages</h6>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <img src="../admin/assets/images/faces/face4.jpg" alt="image" class="profile-pic">
+                  </div>
+                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message</h6>
+                    <p class="text-gray mb-0"> 1 Minutes ago </p>
+                  </div>
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="../admin/assets/images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
+                    <img src="../admin/assets/images/faces/face2.jpg" alt="image" class="profile-pic">
                   </div>
-                  <div class="preview-item-content flex-grow py-2">
-                    <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
-                    <p class="font-weight-light small-text"> The meeting is cancelled </p>
+                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>
+                    <p class="text-gray mb-0"> 15 Minutes ago </p>
                   </div>
                 </a>
+                <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="../admin/assets/images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+                    <img src="../admin/assets/images/faces/face3.jpg" alt="image" class="profile-pic">
                   </div>
-                  <div class="preview-item-content flex-grow py-2">
-                    <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
-                    <p class="font-weight-light small-text"> The meeting is cancelled </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="../admin/assets/images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
-                  </div>
-                  <div class="preview-item-content flex-grow py-2">
-                    <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
-                    <p class="font-weight-light small-text"> The meeting is cancelled </p>
+                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile picture updated</h6>
+                    <p class="text-gray mb-0"> 18 Minutes ago </p>
                   </div>
                 </a>
+                <div class="dropdown-divider"></div>
+                <h6 class="p-3 mb-0 text-center">4 new messages</h6>
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-toggle="dropdown">
-                <i class="mdi mdi-email-outline"></i>
-                <span class="count bg-success">3</span>
+              <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
+                <i class="mdi mdi-bell-outline"></i>
+                <span class="count-symbol bg-danger"></span>
               </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="notificationDropdown">
-                <a class="dropdown-item py-3 border-bottom">
-                  <p class="mb-0 font-weight-medium float-left">You have 4 new notifications </p>
-                  <span class="badge badge-pill badge-primary float-right">View all</span>
-                </a>
-                <a class="dropdown-item preview-item py-3">
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                <h6 class="p-3 mb-0">Notifications</h6>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <i class="mdi mdi-alert m-auto text-primary"></i>
+                    <div class="preview-icon bg-success">
+                      <i class="mdi mdi-calendar"></i>
+                    </div>
                   </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal text-dark mb-1">Application Error</h6>
-                    <p class="font-weight-light small-text mb-0"> Just now </p>
+                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="preview-subject font-weight-normal mb-1">Event today</h6>
+                    <p class="text-gray ellipsis mb-0"> Just a reminder that you have an event today </p>
                   </div>
                 </a>
-                <a class="dropdown-item preview-item py-3">
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <i class="mdi mdi-settings m-auto text-primary"></i>
+                    <div class="preview-icon bg-warning">
+                      <i class="mdi mdi-settings"></i>
+                    </div>
                   </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal text-dark mb-1">Settings</h6>
-                    <p class="font-weight-light small-text mb-0"> Private message </p>
+                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="preview-subject font-weight-normal mb-1">Settings</h6>
+                    <p class="text-gray ellipsis mb-0"> Update dashboard </p>
                   </div>
                 </a>
-                <a class="dropdown-item preview-item py-3">
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <i class="mdi mdi-airballoon m-auto text-primary"></i>
+                    <div class="preview-icon bg-info">
+                      <i class="mdi mdi-link-variant"></i>
+                    </div>
                   </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal text-dark mb-1">New user registration</h6>
-                    <p class="font-weight-light small-text mb-0"> 2 days ago </p>
+                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="preview-subject font-weight-normal mb-1">Launch Admin</h6>
+                    <p class="text-gray ellipsis mb-0"> New admin wow! </p>
                   </div>
                 </a>
+                <div class="dropdown-divider"></div>
+                <h6 class="p-3 mb-0 text-center">See all notifications</h6>
               </div>
             </li>
-            <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
-              <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <img class="img-xs rounded-circle" src="../admin/assets/images/faces/face8.jpg" alt="Profile image"> </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
-                <div class="dropdown-header text-center">
-                  <img class="img-md rounded-circle" src="../admin/assets/images/faces/face8.jpg" alt="Profile image">
-                  <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
-                  <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
-                </div>
-                <a class="dropdown-item">My Profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
-                <a class="dropdown-item">Messages<i class="dropdown-item-icon ti-comment-alt"></i></a>
-                <a class="dropdown-item">Activity<i class="dropdown-item-icon ti-location-arrow"></i></a>
-                <a class="dropdown-item">FAQ<i class="dropdown-item-icon ti-help-alt"></i></a>
-                <a class="dropdown-item">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
-              </div>
+            <li class="nav-item nav-logout d-none d-lg-block">
+              <a class="nav-link" href="#">
+                <i class="mdi mdi-power"></i>
+              </a>
+            </li>
+            <li class="nav-item nav-settings d-none d-lg-block">
+              <a class="nav-link" href="#">
+                <i class="mdi mdi-format-line-spacing"></i>
+              </a>
             </li>
           </ul>
           <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
@@ -182,580 +193,124 @@
           <ul class="nav">
             <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
-                <div class="profile-image">
-                  <img class="img-xs rounded-circle" src="../admin/assets/images/faces/face8.jpg" alt="profile image">
-                  <div class="dot-indicator bg-success"></div>
+                <div class="nav-profile-image">
+                  <img src="../pro_img/{{Session::get('adminPhoto')}}" alt="profile">
+                  <span class="login-status online"></span>
+                  <!--change to offline or busy as needed-->
                 </div>
-                <div class="text-wrapper">
-                  <p class="profile-name">Allen Moreno</p>
-                  <p class="designation">Premium user</p>
+                <div class="nav-profile-text d-flex flex-column">
+                  <span class="font-weight-bold mb-2">{{Session::get('adminID')}}</span>
+                  <span class="text-secondary text-small">{{Session::get('adminName')}}</span>
                 </div>
+                <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
               </a>
             </li>
-            <li class="nav-item nav-category">Main Menu</li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url( 'admin/index')}}">
-                <i class="menu-icon typcn typcn-document-text"></i>
+              <a class="nav-link" href="{{url('admin/index')}}">
                 <span class="menu-title">Dashboard</span>
+                <i class="mdi mdi-home menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="menu-icon typcn typcn-coffee"></i>
+              <a class="nav-link" data-bs-toggle="collapse" href="{{url('admin/product-list')}}" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-title">Product Management</span>
                 <i class="menu-arrow"></i>
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{url('admin/product list')}}">Product List</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/dropdowns.html">Add New</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/typography.html">Delete</a>
-                  </li>
-                </ul>
+                  <li class="nav-item"> <a class="nav-link" href="{{url('admin/product-list')}}">Product List</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="{{url('admin/product-add')}}">Add New</a></li>
+                 </ul>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="menu-icon typcn typcn-coffee"></i>
+              <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-title">Category Management</span>
                 <i class="menu-arrow"></i>
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/buttons.html">Category List</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/dropdowns.html">Add New</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/typography.html">Edit/Delete</a>
-                  </li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Category List</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Add New</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Edit/Delete</a></li>
                 </ul>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="menu-icon typcn typcn-coffee"></i>
+              <a class="nav-link" data-bs-toggle="collapse" href="{{url('admin/manufacturer/manufacturer-list')}}" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-title">Manufacturer Management</span>
                 <i class="menu-arrow"></i>
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/buttons.html">Manufacturer List</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/dropdowns.html">Add New</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/typography.html">Edit/Delete</a>
-                  </li>
+                  <li class="nav-item"> <a class="nav-link" href="{{url('admin/manufacturer/manufacturer-list')}}">Manufacturer List</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Add New</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Edit/Delete</a></li>
                 </ul>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="menu-icon typcn typcn-coffee"></i>
+              <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-title">Customer Management</span>
                 <i class="menu-arrow"></i>
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/buttons.html">Customer List</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/dropdowns.html">Add New</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/typography.html">Delete</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-              <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                <i class="menu-icon typcn typcn-document-add"></i>
-                <span class="menu-title">User Pages</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="auth">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/login.html"> Login </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/register.html"> Register </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/error-404.html"> 404 </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/error-500.html"> 500 </a>
-                  </li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Customer List</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Add New</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Delete</a></li>
                 </ul>
               </div>
             </li>
           </ul>
         </nav>
         <!-- partial -->
-        <div class="main-panel">
-          <div class="content-wrapper">
-            <div class="row">
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Basic Table</h4>
-                    <p class="card-description"> Add class <code>.table</code> </p>
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th>Profile</th>
-                          <th>VatNo.</th>
-                          <th>Created</th>
-                          <th>Status</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Jacob</td>
-                          <td>53275531</td>
-                          <td>12 May 2017</td>
-                          <td>
-                            <label class="badge badge-danger">Pending</label>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Messsy</td>
-                          <td>53275532</td>
-                          <td>15 May 2017</td>
-                          <td>
-                            <label class="badge badge-warning">In progress</label>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>John</td>
-                          <td>53275533</td>
-                          <td>14 May 2017</td>
-                          <td>
-                            <label class="badge badge-info">Fixed</label>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Peter</td>
-                          <td>53275534</td>
-                          <td>16 May 2017</td>
-                          <td>
-                            <label class="badge badge-success">Completed</label>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Dave</td>
-                          <td>53275535</td>
-                          <td>20 May 2017</td>
-                          <td>
-                            <label class="badge badge-warning">In progress</label>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Hoverable Table</h4>
-                    <p class="card-description"> Add class <code>.table-hover</code> </p>
-                    <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>User</th>
-                          <th>Product</th>
-                          <th>Sale</th>
-                          <th>Status</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Jacob</td>
-                          <td>Photoshop</td>
-                          <td class="text-danger"> 28.76% <i class="mdi mdi-arrow-down"></i>
-                          </td>
-                          <td>
-                            <label class="badge badge-danger">Pending</label>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Messsy</td>
-                          <td>Flash</td>
-                          <td class="text-danger"> 21.06% <i class="mdi mdi-arrow-down"></i>
-                          </td>
-                          <td>
-                            <label class="badge badge-warning">In progress</label>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>John</td>
-                          <td>Premier</td>
-                          <td class="text-danger"> 35.00% <i class="mdi mdi-arrow-down"></i>
-                          </td>
-                          <td>
-                            <label class="badge badge-info">Fixed</label>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Peter</td>
-                          <td>After effects</td>
-                          <td class="text-success"> 82.00% <i class="mdi mdi-arrow-up"></i>
-                          </td>
-                          <td>
-                            <label class="badge badge-success">Completed</label>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Dave</td>
-                          <td>53275535</td>
-                          <td class="text-success"> 98.05% <i class="mdi mdi-arrow-up"></i>
-                          </td>
-                          <td>
-                            <label class="badge badge-warning">In progress</label>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Striped Table</h4>
-                    <p class="card-description"> Add class <code>.table-striped</code> </p>
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th> User </th>
-                          <th> First name </th>
-                          <th> Progress </th>
-                          <th> Amount </th>
-                          <th> Deadline </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../../assets/images/faces-clipart/pic-1.png" alt="image" />
-                          </td>
-                          <td> Herman Beck </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $ 77.99 </td>
-                          <td> May 15, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../../assets/images/faces-clipart/pic-2.png" alt="image" />
-                          </td>
-                          <td> Messsy Adam </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $245.30 </td>
-                          <td> July 1, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../../assets/images/faces-clipart/pic-3.png" alt="image" />
-                          </td>
-                          <td> John Richards </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $138.00 </td>
-                          <td> Apr 12, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../../assets/images/faces-clipart/pic-4.png" alt="image" />
-                          </td>
-                          <td> Peter Meggik </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $ 77.99 </td>
-                          <td> May 15, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../../assets/images/faces-clipart/pic-1.png" alt="image" />
-                          </td>
-                          <td> Edward </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $ 160.25 </td>
-                          <td> May 03, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../../assets/images/faces-clipart/pic-2.png" alt="image" />
-                          </td>
-                          <td> John Doe </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $ 123.21 </td>
-                          <td> April 05, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../../assets/images/faces-clipart/pic-3.png" alt="image" />
-                          </td>
-                          <td> Henry Tom </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $ 150.00 </td>
-                          <td> June 16, 2015 </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Bordered table</h4>
-                    <p class="card-description"> Add class <code>.table-bordered</code> </p>
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th> # </th>
-                          <th> First name </th>
-                          <th> Progress </th>
-                          <th> Amount </th>
-                          <th> Deadline </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td> 1 </td>
-                          <td> Herman Beck </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $ 77.99 </td>
-                          <td> May 15, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td> 2 </td>
-                          <td> Messsy Adam </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $245.30 </td>
-                          <td> July 1, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td> 3 </td>
-                          <td> John Richards </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $138.00 </td>
-                          <td> Apr 12, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td> 4 </td>
-                          <td> Peter Meggik </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $ 77.99 </td>
-                          <td> May 15, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td> 5 </td>
-                          <td> Edward </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $ 160.25 </td>
-                          <td> May 03, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td> 6 </td>
-                          <td> John Doe </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $ 123.21 </td>
-                          <td> April 05, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td> 7 </td>
-                          <td> Henry Tom </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $ 150.00 </td>
-                          <td> June 16, 2015 </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Inverse table</h4>
-                    <p class="card-description"> Add class <code>.table-dark</code> </p>
-                    <table class="table table-dark">
-                      <thead>
-                        <tr>
-                          <th> # </th>
-                          <th> First name </th>
-                          <th> Amount </th>
-                          <th> Deadline </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td> 1 </td>
-                          <td> Herman Beck </td>
-                          <td> $ 77.99 </td>
-                          <td> May 15, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td> 2 </td>
-                          <td> Messsy Adam </td>
-                          <td> $245.30 </td>
-                          <td> July 1, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td> 3 </td>
-                          <td> John Richards </td>
-                          <td> $138.00 </td>
-                          <td> Apr 12, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td> 4 </td>
-                          <td> Peter Meggik </td>
-                          <td> $ 77.99 </td>
-                          <td> May 15, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td> 5 </td>
-                          <td> Edward </td>
-                          <td> $ 160.25 </td>
-                          <td> May 03, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td> 6 </td>
-                          <td> John Doe </td>
-                          <td> $ 123.21 </td>
-                          <td> April 05, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td> 7 </td>
-                          <td> Henry Tom </td>
-                          <td> $ 150.00 </td>
-                          <td> June 16, 2015 </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12 stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h3 class="card-title">Product List</h3>
-                    <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th> # </th>
-                          <th> Product name </th>
-                          <th> Price </th>
-                          <th> Image </th>
-                          <th> Category </th>
-                          <th> Actions </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                       @foreach ($pro as $p)
-                           <tr>
-                            <td>{{$p->productID}}</td>
-                            <td>{{$p->productName}}</td>
-                            <td>{{$p->productPrice}}</td>
-                            <td>
-                              <img src="  /pro/img/{{$p->productImage}}" title="{{$p->productDetails}}"
-                              style="height: 100px; width: 100px;">
-                            </td>
-                            <td>{{$p->catID}}</td>
-                            <td>
-                              <a href="#">Edit</a> 
-                              <a href="#">Delete</a>
-                              
-                            </td>
-                           </tr>
-                       @endforeach
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+        <div class="container mt-3">
+          <h2>Product List</h2>
+          <div class="table-responsive">
+            <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th> ProductID </th>
+                      <th> ProductName </th>
+                      <th> ProductPrice </th>
+                      <th> ProductDate </th>
+                      <th> ProductImage </th>
+                      <th> Manufacturer </th>
+                      <th> CatID </th>
+                      <th> Actions </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   @foreach ($pro as $p)
+                       <tr>
+                        <td>{{$p->productID}}</td>
+                        <td>{{$p->productName}}</td>
+                        <td>{{$p->productPrice}}</td>
+                        <td>{{$p->productDate}}</td>
+                        <td>
+                            <img src="../pro_img/{{$p->productImage1}}" 
+                            style="height:90px; width:90px;">
+                        </td>
+                        <td>{{$p->manufacturerID}}</td>
+                        <td>{{$p->catID}}</td>
+                        <td>
+                          <a href="{{url('product-edit')}}\{{$p->productID}}" title="Edit this product">Edit</a>
+                            <a href="{{url('product-delete')}}\{{$p->productID}}" title="btn btn-danger btn-sm"
+                              onclick="return confirm('Are you sure you want to delete this product?')">Delete</a>
+                        </td>
+                        
+                       </tr>
+                   @endforeach
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
-          <!-- content-wrapper ends -->
-          <!-- partial:../../partials/_footer.html -->
-          <footer class="footer">
-            <div class="container-fluid clearfix">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
-            </div>
-          </footer>
-          <!-- partial -->
         </div>
         <!-- main-panel ends -->
       </div>
@@ -764,17 +319,19 @@
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="../admin/assets/vendors/js/vendor.bundle.base.js"></script>
-    <script src="../admin/assets/vendors/js/vendor.bundle.addons.js"></script>
     <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <!-- End plugin js for this page-->
+    <!-- Plugin js for this page -->
+    <script src="../admin/assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="../admin/assets/js/jquery.cookie.js" type="text/javascript"></script>
+    <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="../admin/assets/js/shared/off-canvas.js"></script>
-    <script src="../admin/assets/js/shared/misc.js"></script>
+    <script src="../admin/assets/js/off-canvas.js"></script>
+    <script src="../admin/assets/js/hoverable-collapse.js"></script>
+    <script src="../admin/assets/js/misc.js"></script>
     <!-- endinject -->
-    <!-- Custom js for this page-->
-    <script src="../admin/assets/js/demo_1/dashboard.js"></script>
-    <!-- End custom js for this page-->
-    <script src="../admin/assets/js/shared/jquery.cookie.js" type="text/javascript"></script>
+    <!-- Custom js for this page -->
+    <script src="../admin/assets/js/dashboard.js"></script>
+    <script src="../admin/assets/js/todolist.js"></script>
+    <!-- End custom js for this page -->
   </body>
 </html>

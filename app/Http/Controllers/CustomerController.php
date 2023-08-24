@@ -76,27 +76,34 @@ class CustomerController extends Controller
         $pro = Product::get();
         return view('customer.product', compact('pro'));
     }
-    
-    public function Edit()
+
+    public function profile()
     {
-        $cus = Customer::get();
-        return view('customer.customerEdit', compact('cus'));
+        $customer = Customer::where('customerID', '=', session('cusID'))->first();
+        return view('customer.profile', compact('customer'));
     }
+
     public function Update(Request $request)
     {
-        $cus = new Customer();
-        $cus->customerID = $request->id;
-        $cus->customerEmail = $request->email;
-        $cus->customerPassword = Hash::make($request->password);
-        $cus->customerName = $request->name;
-        $cus->customerAddress = $request->address;
-        $cus->customerPhone = $request->phone;
-        $cus->customerPhoto = $request->photo;
-        $res = $cus->save();
-        if ($res) {
-            return view('customer.login');
-        } else {
-            return back()->with('fail', 'Something wrong! Please enter again!');
-        }
+        Customer::where('customerID', '=', $request->id)->update([
+            'customerEmail' => $request->email,
+            'customerName' => $request->name,
+            'customerAddress' => $request->address,
+            'customerPhone' => $request->phone,
+            'customerPhoto' => $request->photo
+        ]);
+
+        return redirect('customer/index');
+        //return redirect()->back()->with('success', 'Customer updated successfully!');
+    }
+    public function customerList()
+    {
+        $customers = Customer::get();
+        return view('admin.customer-list', compact('customers'));
+    }
+    public function delete($id)
+    {
+        Customer::where('customerID', '=', $id)->delete();
+        return redirect()->back()->with('success', 'Customer successfully deleted');
     }
 }

@@ -6,20 +6,20 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpFoundation\Response;
-
 class AuthCheck
 {
     /**
      * Handle an incoming request.
      *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
+     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next):Response
     {
-        if(!Session::has('adminID')){
-            return redirect('admin/login')->with('fail', 'You have to login first!');
+        if(!Session()->has('adminID')){
+            return redirect('admin/login')->with('fail','You have to login first!');
         }
-
         return $next($request);
     }
 }

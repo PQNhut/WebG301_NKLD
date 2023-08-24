@@ -1,361 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Admin Dashboard</title>
+    <title>Purple Admin</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="../admin/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../admin/assets/vendors/iconfonts/ionicons/dist/css/ionicons.css">
-    <link rel="stylesheet" href="../admin/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../admin/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../admin/assets/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../admin/assets/vendors/css/vendor.bundle.addons.css">
     <!-- endinject -->
-    <!-- plugin css for this page -->
+    <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="../admin/assets/css/shared/style.css">
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="../admin/assets/css/demo_1/style.css">
-    <!-- End Layout styles -->
+    <link rel="stylesheet" href="../admin/assets/css/style.css">
+    <!-- End layout styles -->
     <link rel="shortcut icon" href="../admin/assets/images/favicon.ico" />
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container-scroller">
-      <!-- partial:partials/_navbar.html -->
-      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-          <a class="navbar-brand brand-logo" href="{{url('admin/index')}}">
-            <img src="../admin/assets/images/logo.svg" alt="logo" /> </a>
-          <a class="navbar-brand brand-logo-mini" href="{{url('admin/index')}}">
-            <img src="../admin/assets/images/logo-mini.svg" alt="logo" /> </a>
-        </div>
-        <div class="navbar-menu-wrapper d-flex align-items-center">
-          <ul class="navbar-nav">
-            <li class="nav-item font-weight-semibold d-none d-lg-block">Help : +050 2992 709</li>
-            <li class="nav-item dropdown language-dropdown">
-              <a class="nav-link dropdown-toggle px-2 d-flex align-items-center" id="LanguageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <div class="d-inline-flex mr-0 mr-md-3">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-us"></i>
-                  </div>
+        <div class="row p-0 m-0 proBanner" id="proBanner">
+            <div class="col-md-12 p-0 m-0">
+                <div class="card-body card-body-padding d-flex align-items-center justify-content-between">
+                    <div class="ps-lg-1">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <p class="mb-0 font-weight-medium me-3 buy-now-text">Free 24/7 customer support, updates,
+                                and more with this template!</p>
+                            <a href="https://www.bootstrapdash.com/product/purple-bootstrap-admin-template/?utm_source=organic&utm_medium=banner&utm_campaign=buynow_demo"
+                                target="_blank" class="btn me-2 buy-now-btn border-0">Get Pro</a>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="https://www.bootstrapdash.com/product/purple-bootstrap-admin-template/"><i
+                                class="mdi mdi-home me-3 text-white"></i></a>
+                        <button id="bannerClose" class="btn border-0 p-0">
+                            <i class="mdi mdi-close text-white me-0"></i>
+                        </button>
+                    </div>
                 </div>
-                <span class="profile-text font-weight-medium d-none d-md-block">English</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-left navbar-dropdown py-2" aria-labelledby="LanguageDropdown">
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-us"></i>
-                  </div>English
-                </a>
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-fr"></i>
-                  </div>French
-                </a>
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-ae"></i>
-                  </div>Arabic
-                </a>
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-ru"></i>
-                  </div>Russian
-                </a>
-              </div>
-            </li>
-          </ul>
-          <form class="ml-auto search-form d-none d-md-block" action="#">
-            <div class="form-group">
-              <input type="search" class="form-control" placeholder="Search Here">
             </div>
-          </form>
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-              <a class="nav-link count-indicator" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <i class="mdi mdi-bell-outline"></i>
-                <span class="count">7</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
-                <a class="dropdown-item py-3">
-                  <p class="mb-0 font-weight-medium float-left">You have 7 unread mails </p>
-                  <span class="badge badge-pill badge-primary float-right">View all</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="../admin/assets/images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
-                  </div>
-                  <div class="preview-item-content flex-grow py-2">
-                    <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
-                    <p class="font-weight-light small-text"> The meeting is cancelled </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="../admin/assets/images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
-                  </div>
-                  <div class="preview-item-content flex-grow py-2">
-                    <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
-                    <p class="font-weight-light small-text"> The meeting is cancelled </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="../admin/assets/images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
-                  </div>
-                  <div class="preview-item-content flex-grow py-2">
-                    <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
-                    <p class="font-weight-light small-text"> The meeting is cancelled </p>
-                  </div>
-                </a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-toggle="dropdown">
-                <i class="mdi mdi-email-outline"></i>
-                <span class="count bg-success">3</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="notificationDropdown">
-                <a class="dropdown-item py-3 border-bottom">
-                  <p class="mb-0 font-weight-medium float-left">You have 4 new notifications </p>
-                  <span class="badge badge-pill badge-primary float-right">View all</span>
-                </a>
-                <a class="dropdown-item preview-item py-3">
-                  <div class="preview-thumbnail">
-                    <i class="mdi mdi-alert m-auto text-primary"></i>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal text-dark mb-1">Application Error</h6>
-                    <p class="font-weight-light small-text mb-0"> Just now </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item py-3">
-                  <div class="preview-thumbnail">
-                    <i class="mdi mdi-settings m-auto text-primary"></i>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal text-dark mb-1">Settings</h6>
-                    <p class="font-weight-light small-text mb-0"> Private message </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item py-3">
-                  <div class="preview-thumbnail">
-                    <i class="mdi mdi-airballoon m-auto text-primary"></i>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal text-dark mb-1">New user registration</h6>
-                    <p class="font-weight-light small-text mb-0"> 2 days ago </p>
-                  </div>
-                </a>
-              </div>
-            </li>
-            <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
-              <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <img class="img-xs rounded-circle" src="../img/{{Session::get('adminPhoto')}}" alt="Profile image"> </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
-                <div class="dropdown-header text-center">
-                  <img class="img-md rounded-circle" src="../img/{{Session::get('adminPhoto')}}" alt="Profile image">
-                  <p class="mb-1 mt-3 font-weight-semibold">{{Session::get('adminID')}}</p>
-                  <p class="font-weight-light text-muted mb-0">{{Session::get('adminName')}}</p>
-                </div>
-                <a class="dropdown-item">My Profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
-                <a class="dropdown-item">Messages<i class="dropdown-item-icon ti-comment-alt"></i></a>
-                <a class="dropdown-item">Activity<i class="dropdown-item-icon ti-location-arrow"></i></a>
-                <a class="dropdown-item">FAQ<i class="dropdown-item-icon ti-help-alt"></i></a>
-                <a class="dropdown-item" href="{{route('admin-logout')}}">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
-              </div>
-            </li>
-          </ul>
-          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-            <span class="mdi mdi-menu"></span>
-          </button>
         </div>
-      </nav>
-      <!-- partial -->
-      <div class="container-fluid page-body-wrapper">
-        <!-- partial:partials/_sidebar.html -->
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
-          <ul class="nav">
-            <li class="nav-item nav-profile">
-              <a href="#" class="nav-link">
-                <div class="profile-image">
-                  <img class="img-xs rounded-circle" src="../img/{{Session::get('adminPhoto')}}" alt="profile image">
-                  <div class="dot-indicator bg-success"></div>
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo" href="index.html"><img src="../admin/assets/images/logo.svg"
+                        alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="index.html"><img
+                        src="../admin/assets/images/logo-mini.svg" alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-stretch">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+                <div class="search-field d-none d-md-block">
+                    <form class="d-flex align-items-center h-100" action="#">
+                        <div class="input-group">
+                            <div class="input-group-prepend bg-transparent">
+                                <i class="input-group-text border-0 mdi mdi-magnify"></i>
+                            </div>
+                            <input type="text" class="form-control bg-transparent border-0"
+                                placeholder="Search projects">
+                        </div>
+                    </form>
                 </div>
-                <div class="text-wrapper">
-                  <p class="profile-name">{{Session::get('adminName')}}</p>
-                  <p class="designation">Premium user</p>
-                </div>
-              </a>
-            </li>
-            <li class="nav-item nav-category">Main Menu</li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{url('admin/index')}}">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Dashboard</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="menu-icon typcn typcn-coffee"></i>
-                <span class="menu-title">Product Management</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> 
-                    <a class="nav-link" href="{{url('admin/product-list')}}">Product List</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{url('admin/product-add')}}}">Add New</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{url('admin/product-list')}}">Edit/Delete</a>
-                  </li>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" id="profileDropdown" href="#"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="nav-profile-img">
+                                <img src="../pro_img/{{Session::get('adminPhoto')}}" alt="image">
+                                <span class="availability-status online"></span>
+                            </div>
+                            <div class="nav-profile-text">
+                                <p class="mb-1 text-black">{{Session::get('adminID')}}</p>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                           <a class="dropdown-item" href="{{route('admin-logout')}}">
+                                <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
+                        </div>
+                    </li>
+                    <li class="nav-item d-none d-lg-block full-screen-link">
+                        <a class="nav-link">
+                            <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="mdi mdi-email-outline"></i>
+                            <span class="count-symbol bg-warning"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+                            aria-labelledby="messageDropdown">
+                            <h6 class="p-3 mb-0">Messages</h6>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <img src="../admin/assets/images/faces/face4.jpg" alt="image"
+                                        class="profile-pic">
+                                </div>
+                                <div
+                                    class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message
+                                    </h6>
+                                    <p class="text-gray mb-0"> 1 Minutes ago </p>
+                                </div>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <img src="../admin/assets/images/faces/face2.jpg" alt="image"
+                                        class="profile-pic">
+                                </div>
+                                <div
+                                    class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a
+                                        message</h6>
+                                    <p class="text-gray mb-0"> 15 Minutes ago </p>
+                                </div>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <img src="../admin/assets/images/faces/face3.jpg" alt="image"
+                                        class="profile-pic">
+                                </div>
+                                <div
+                                    class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile picture
+                                        updated</h6>
+                                    <p class="text-gray mb-0"> 18 Minutes ago </p>
+                                </div>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <h6 class="p-3 mb-0 text-center">4 new messages</h6>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
+                            data-bs-toggle="dropdown">
+                            <i class="mdi mdi-bell-outline"></i>
+                            <span class="count-symbol bg-danger"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+                            aria-labelledby="notificationDropdown">
+                            <h6 class="p-3 mb-0">Notifications</h6>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <div class="preview-icon bg-success">
+                                        <i class="mdi mdi-calendar"></i>
+                                    </div>
+                                </div>
+                                <div
+                                    class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                                    <h6 class="preview-subject font-weight-normal mb-1">Event today</h6>
+                                    <p class="text-gray ellipsis mb-0"> Just a reminder that you have an event today
+                                    </p>
+                                </div>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <div class="preview-icon bg-warning">
+                                        <i class="mdi mdi-settings"></i>
+                                    </div>
+                                </div>
+                                <div
+                                    class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                                    <h6 class="preview-subject font-weight-normal mb-1">Settings</h6>
+                                    <p class="text-gray ellipsis mb-0"> Update dashboard </p>
+                                </div>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <div class="preview-icon bg-info">
+                                        <i class="mdi mdi-link-variant"></i>
+                                    </div>
+                                </div>
+                                <div
+                                    class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                                    <h6 class="preview-subject font-weight-normal mb-1">Launch Admin</h6>
+                                    <p class="text-gray ellipsis mb-0"> New admin wow! </p>
+                                </div>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <h6 class="p-3 mb-0 text-center">See all notifications</h6>
+                        </div>
+                    </li>
+                    <li class="nav-item nav-logout d-none d-lg-block">
+                        <a class="nav-link" href="#">
+                            <i class="mdi mdi-power"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item nav-settings d-none d-lg-block">
+                        <a class="nav-link" href="#">
+                            <i class="mdi mdi-format-line-spacing"></i>
+                        </a>
+                    </li>
                 </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="menu-icon typcn typcn-coffee"></i>
-                <span class="menu-title">Category Management</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/buttons.html">Category List</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/dropdowns.html">Add New</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/typography.html">Edit/Delete</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="menu-icon typcn typcn-coffee"></i>
-                <span class="menu-title">Manufacturer Management</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/buttons.html">Manufacturer List</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/dropdowns.html">Add New</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/typography.html">Edit/Delete</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="menu-icon typcn typcn-coffee"></i>
-                <span class="menu-title">Customer Management</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/buttons.html">Customer List</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/dropdowns.html">Add New</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/typography.html">Delete</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                    data-toggle="offcanvas">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+            </div>
         </nav>
         <!-- partial -->
-        <div class="main-panel">
-          <div class="content-wrapper">
-            <div class="row">
-              <div class="col-md-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h3 class="card-title">Add new product</h3>
-                    <form class="forms-sample">
-                      <div class="form-group">
-                        <label for="exampleInputName1">Name</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail3">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword4">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
-                      </div>
-                      <div class="form-group">
-                        <label>File upload</label>
-                        <input type="file" name="img[]" class="file-upload-default">
-                        <div class="input-group col-xs-12">
-                          <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                          <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-info" type="button">Upload</button>
-                          </span>
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item nav-profile">
+                        <a href="#" class="nav-link">
+                            <div class="nav-profile-image">
+                                <img src="../pro_img/{{Session::get('adminPhoto')}}" alt="profile">
+                                <span class="login-status online"></span>
+                                <!--change to offline or busy as needed-->
+                            </div>
+                            <div class="nav-profile-text d-flex flex-column">
+                                <span class="font-weight-bold mb-2">{{Session::get('adminID')}}</span>
+                                <span class="text-secondary text-small">{{Session::get('adminName')}}</span>
+                            </div>
+                            <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('admin/index') }}">
+                            <span class="menu-title">Dashboard</span>
+                            <i class="mdi mdi-home menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="{{ url('admin/product-add') }}" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <span class="menu-title">Product Management</span>
+                            <i class="menu-arrow"></i>
+                            <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{{ url('admin/product-list') }}">Product List</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{ url('admin/product-add') }}">Add New</a></li>
+                            </ul>
                         </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputCity1">City</label>
-                        <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleTextarea1">Textarea</label>
-                        <textarea class="form-control" id="exampleTextarea1" rows="2"></textarea>
-                      </div>
-                      <button type="submit" class="btn btn-success mr-2">Submit</button>
-                      <button class="btn btn-light">Cancel</button>
-                    </form>
-                  </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <span class="menu-title">Category Management</span>
+                            <i class="menu-arrow"></i>
+                            <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="pages/ui-features/typography.html">Category List</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="pages/ui-features/typography.html">Add New</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="pages/ui-features/typography.html">Edit/Delete</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <span class="menu-title">Manufacturer Management</span>
+                            <i class="menu-arrow"></i>
+                            <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="pages/ui-features/buttons.html">Manufacturer List</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="pages/ui-features/typography.html">Add New</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="pages/ui-features/typography.html">Edit/Delete</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <span class="menu-title">Customer Management</span>
+                            <i class="menu-arrow"></i>
+                            <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="pages/ui-features/buttons.html">Customer List</a></li>
+                                <button>
+                                    <li class="nav-item"> <a class="nav-link"
+                                            href="pages/ui-features/typography.html">Add New</a></li>
+                                </button>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="pages/ui-features/typography.html">Delete</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <!-- partial -->
+            <div class="col-lg-12 stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Product add</h3>
+                        @if (Session::has('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{ Session::get('success') }}
+                            </div>
+                        @endif
+                        <form class="forms-sample" method="POST" action="{{ url('product-save') }}"
+                            enctype="multipart/form-data">
+                            @csrf
+
+                            <!-- Form fields... -->
+
+                            <div class="form-group">
+                                <label for="productID">Product ID</label>
+                                <input type="text" name="productID" id="productID" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="productName">Product Name</label>
+                                <input type="text" name="productName" id="productName" class="form-control"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="productPrice">Product Price</label>
+                                <input type="number" name="productPrice" id="productPrice" class="form-control"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="productDate">Product Date</label>
+                                <input type="date" name="productDate" id="productDate" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="productDetails">product Details</label>
+                                <input type="text" name="productDetails" id="productDetails" class="form-control"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="manufacturerID">Manufacturer Name</label>
+                                <select type="number" name="manufacturer" id="manufacturer" class="form-control">
+                                    @foreach ($manu as $manus)
+                                        <option value="{{ $manus->manufacturerID }}">{{ $manus->manufacturerName }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="catID">Category </label>
+                                <select name="category" id="category" class="form-control">
+                                    @foreach ($cat as $cats)
+                                        <option value="{{ $cats->catID }}">{{ $cats->catName }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="productImage1">Product Image</label>
+                                <input type="file" name="productImage1" id="productImage1"
+                                    class="form-control-file">
+                            </div>
+                           
+                            <button type="submit" class="btn btn-primary">Add Product</button>
+                            <button type="button" class="btn btn-secondary" id="cancelButton">Cancel</button>
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function() {
+                                    const cancelButton = document.getElementById("cancelButton");
+                                    cancelButton.addEventListener("click", function() {
+                                        window.location.href = "{{ url('admin/product-list') }}";
+                                    });
+                                });
+                            </script>
+                        </form>
+                        </table>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <!-- content-wrapper ends -->
-          <!-- partial:../../partials/_footer.html -->
-          <footer class="footer">
-            <div class="container-fluid clearfix">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
-            </div>
-          </footer>
-          <!-- partial -->
         </div>
         <!-- main-panel ends -->
-      </div>
-      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="../admin/assets/vendors/js/vendor.bundle.base.js"></script>
-    <script src="../admin/assets/vendors/js/vendor.bundle.addons.js"></script>
     <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <!-- End plugin js for this page-->
+    <!-- Plugin js for this page -->
+    <script src="../admin/assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="../admin/assets/js/jquery.cookie.js" type="text/javascript"></script>
+    <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="../admin/assets/js/shared/off-canvas.js"></script>
-    <script src="../admin/assets/js/shared/misc.js"></script>
+    <script src="../admin/assets/js/off-canvas.js"></script>
+    <script src="../admin/assets/js/hoverable-collapse.js"></script>
+    <script src="../admin/assets/js/misc.js"></script>
     <!-- endinject -->
-    <!-- Custom js for this page-->
-    <script src="../admin/assets/js/demo_1/dashboard.js"></script>
-    <!-- End custom js for this page-->
-    <script src="../admin/assets/js/shared/jquery.cookie.js" type="text/javascript"></script>
-  </body>
+    <!-- Custom js for this page -->
+    <script src="../admin/assets/js/dashboard.js"></script>
+    <script src="../admin/assets/js/todolist.js"></script>
+    <!-- End custom js for this page -->
+</body>
+
 </html>
